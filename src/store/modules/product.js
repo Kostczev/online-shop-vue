@@ -6,31 +6,23 @@ export default {
    },
    mutations: {
       SET_PRODUCTS_TO_STATE: (state, products) => {
-         state.products = products;
-         //let num = 1;
-         //products.forEach(book => {
-         //   book.article = 'T' + num;
-         //   state.products.push(book);
-         //   num++;
-         //});
+         let num = 1;
+         state.products = [];
+         products.forEach(book => {
+            book.article = 'T' + num;
+            state.products.push(book);
+            num++;
+         });
       }
    },
    actions: {
-      //GET_PRODUCTS_FROM_API({commit}) {
-      //   fetch('@/store/dataBooks.json')
-      //      .then(resp => resp.json())
-      //      .then(json => {
-      //         commit('SET_PRODUCTS_TO_STATE', json);
-      //         return json;
-      //      });
-      //}
       GET_PRODUCTS_FROM_API({commit}) {
-         return axios('http://localhost:3000/products', {
+         return axios('http://localhost:3000/books', {
             method: "GET"
          })
-         .then((products) => {
-            commit('SET_PRODUCTS_TO_STATE', products.data);
-            return products;
+         .then((books) => {
+            commit('SET_PRODUCTS_TO_STATE', books.data);
+            return books;
          })
          .catch((error) => {
             console.log(error);

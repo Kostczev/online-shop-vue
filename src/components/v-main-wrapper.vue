@@ -22,15 +22,15 @@
             </div>
             <router-link :to="{name: 'cart'}" class="v-main-wrapper__header-item">
                <img src="@/assets/icons/cart.svg" alt="">
-               <div class="v-main-wrapper__cart-quantity">{{CART.length}}</div>
+               <div class="v-main-wrapper__cart-quantity cart-text">{{CART.length}}</div>
             </router-link>
          </div>
       </header>
-      <main class="container">
+      <main class="v-main-wrapper__main container">
          <router-view></router-view>
       </main>
-      <footer>
-
+      <footer class="v-main-wrapper__footer">
+         c. 2022. Чурцев Константин.
       </footer>
    </div>
 </template>
@@ -54,6 +54,9 @@ export default {
 
 <style lang="scss">
    .v-main-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       &__header {
          background: rgb(14, 112, 112);
       }
@@ -71,6 +74,7 @@ export default {
          line-height: 40px;
          color: #000;
          cursor: pointer;
+         user-select: none;
          & img {
             padding: 3px 10px;
             height: 30px;
@@ -83,19 +87,32 @@ export default {
          position: absolute;
          top: 4px;
          right: 15px;
-         color: #fff;
+      }
+      &__main {
+         flex: 1 1 auto;
+      }
+      &__footer {
          background: rgb(25, 146, 146);
-         padding: 10px 5px;
-         line-height: 0;
-         border-radius: 50%;
-         
+         height: 30px;
+         line-height: 30px;
+         margin-top: 30px;
       }
    }
    .container {
       max-width: 900px;
+      width: 100%;
       margin: 0 auto;
    }
    .router-link-active {
       background: rgb(18, 153, 153);
    }
+   .cart-text {
+      color: #fff;
+      background: rgb(25, 146, 146);
+      padding: 10px 5px;
+      line-height: 0;
+      border-radius: 50%;
+      user-select: none;
+   }
+
 </style>

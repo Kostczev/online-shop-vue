@@ -2,12 +2,12 @@
    <div class="v-cart-item">
       <img 
          class="v-cart-item__image" 
-         :src=" require('@/assets/images/' + cart_item_data.image)" 
+         :src=" require('@/assets/images/books/' + cart_item_data.image)" 
          alt=""
       >
       <div class="v-cart-item__info">
          <p>{{cart_item_data.name}}</p>
-         <p>{{cart_item_data.price}}</p>
+         <p class="v-cart-item__author">{{cart_item_data.author}}</p>
       </div>
       <div class="v-cart-item__quantity">
          <p>Количество:</p>
@@ -18,8 +18,7 @@
          </p>
       </div>
       <div class="v-cart-item__totle-price">
-         <p>Цена:</p>
-         <p>{{cart_item_data.totalPrice}}</p>
+         {{cart_item_data.totalPrice}} ₽
       </div>
       <button @click="deleteFromCart" class="v-cart-item__del-btn">✕</button>
    </div>
@@ -57,8 +56,6 @@
 
 <style lang="scss">
    .v-cart-item {
-      //max-width: 700px;
-      //margin: 0 auto;
       position: relative;
       display: flex;
       flex-wrap: nowrap;
@@ -69,6 +66,22 @@
       margin: 16px;
       &__image {
          max-width: 50px;
+      }
+      &__info {
+         width: 100%;
+         max-width: 400px;
+      }
+      &__author {
+         margin-top: 5px;
+         color: rgb(138, 138, 138);
+      }
+      &__quantity {
+         width: 100%;
+         max-width: 100px;
+      }
+      &__totle-price {
+         width: 100%;
+         max-width: 100px;   
       }
       &__quantit-button {
          padding: 0 10px;

@@ -72,13 +72,14 @@
 
 <style lang="scss">
    .v-cart {
-      margin-bottom: 100px;
+      width: 100%;
       &__total {
          position: fixed;
          bottom: 0;
          left: 0;
          right: 0;
          display: flex;
+         line-height: 40px;
          justify-content: center;
          background: rgb(14, 112, 112);
          font-size: 20px;

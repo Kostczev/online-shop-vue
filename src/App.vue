@@ -26,4 +26,10 @@ export default {
 body {
    margin: 0;
 }
+p {
+   margin-block: 0;
+}
+ul {
+   padding-inline-start: 0;
+}
 </style>

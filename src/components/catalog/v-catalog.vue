@@ -5,22 +5,25 @@
             <input id="radio-1" type="radio" 
                name="tips" value="All" v-model="tip" 
                checked>
-            <label for="radio-1">Все книги</label>
+            <label for="radio-1">Все <span class="visible-on-the-pc">книги</span></label>
          </div>
          <div class="form-radio-btn">
             <input id="radio-2" type="radio"
                name="tips" value="New" v-model="tip">
-            <label for="radio-2">Новинки литературы</label>
+            <label for="radio-2">Новинки 
+               <span class="visible-on-the-pc">литературы</span></label>
          </div>
          <div class="form-radio-btn">
             <input id="radio-3" type="radio" 
                name="tips" value="Top" v-model="tip">
-            <label for="radio-3">Лучшие из лучших</label>
+            <label for="radio-3">Лучшие 
+               <span class="visible-on-the-pc">из лучших</span></label>
          </div>
          <div class="form-radio-btn">
             <input id="radio-4" type="radio" 
                name="tips" value="Coming" v-model="tip">
-            <label for="radio-4">Скоро в продаже</label>
+            <label for="radio-4">Скоро 
+               <span class="visible-on-the-pc">в продаже</span></label>
          </div>
       </div>
       <div class="v-catalog__list">
@@ -86,6 +89,12 @@
 </script>
 
 <style lang="scss">
+   .visible-on-the-pc {
+      @media (max-width: 700px) {
+      display: none;
+      }
+   }
+
    .form-radio-btn {
       display: inline-block;
 

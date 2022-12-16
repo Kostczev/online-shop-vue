@@ -12,12 +12,6 @@
                КНИГИ
             </router-link>
             <div class="v-main-wrapper__header-item">
-               КОНЦТОВАРЫ
-            </div>
-            <div class="v-main-wrapper__header-item">
-               БОНУСНАЯ ПРОГРАММА
-            </div>
-            <div class="v-main-wrapper__header-item">
                АКЦИИ
             </div>
             <router-link :to="{name: 'cart'}" class="v-main-wrapper__header-item">

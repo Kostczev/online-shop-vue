@@ -6,12 +6,14 @@ export default createRouter({
    history: createWebHistory(),
    routes: [
       { 
-         path: '/', 
+         path: '/online-shop-vue/', 
+         //path: '/', 
          component: vCatalog, 
          name: 'catalog' 
       },
       { 
-         path: '/cart', 
+         path: '/online-shop-vue/cart', 
+         //path: '/cart', 
          component: vCart, 
          name: 'cart', 
          //props: true 

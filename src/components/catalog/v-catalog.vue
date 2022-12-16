@@ -23,7 +23,6 @@
             <label for="radio-4">Скоро в продаже</label>
          </div>
       </div>
-      <vLoader v-if="loading"/>
       <div class="v-catalog__list">
          <vCatalogItem 
             v-for="product in filtredProducts"
@@ -37,20 +36,17 @@
 
 <script>
    import vCatalogItem from '@/components/catalog/v-catalog-item';
-   import vLoader from '@/components/v-loader.vue'
    import { mapGetters, mapActions } from 'vuex';
 
    export default {
    name: 'v-catalog',
    components: {
-      vCatalogItem,
-      vLoader
+      vCatalogItem
    },
    data() {
       return {
          tip: '',
-         sortedProduct: [],
-         loading: true
+         sortedProduct: []
       }
    },
    computed: { 
@@ -85,7 +81,6 @@
    }, 
    mounted() {
       this.GET_PRODUCTS_FROM_API()
-         .then(this.loading = false);
    }
 }
 </script>

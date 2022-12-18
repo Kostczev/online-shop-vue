@@ -17,7 +17,8 @@ export default {
    },
    actions: {
       GET_PRODUCTS_FROM_API({commit}) {
-         return axios('http://localhost:3000/books', {
+         //return axios('http://localhost:3000/books', {
+         return axios('https://my-json-server.typicode.com/Kostczev/online-shop-vue/books', {
             method: "GET"
          })
          .then((books) => {

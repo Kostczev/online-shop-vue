@@ -23,7 +23,7 @@
       <main class="v-main-wrapper__main container">
          <router-view></router-view>
       </main>
-      <footer class="v-main-wrapper__footer">
+      <footer class="v-main-wrapper__footer" @click="removeLocalStorageCart">
          c. 2022. Чурцев Константин.
       </footer>
    </div>
@@ -40,7 +40,11 @@ export default {
       return {}
    },
    computed: mapGetters(["CART"]),     //вычисляемые свойства
-   methods: {},      //клики, покз окон, скрытие показ элементов
+   methods: {
+      removeLocalStorageCart() {
+         localStorage.removeItem('cart');
+      }
+   },      //клики, покз окон, скрытие показ элементов
    watch: {},        //слежка за изменением чего либо и действием при этом
    mounted() {}      //отрабатывает после загрузки элемента       
 }
